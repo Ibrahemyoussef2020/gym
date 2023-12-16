@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/****************** ***********************/
+
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+/******************** reset *******************/
+
+p{
+    margin-block-start:0;
+    margin-block-end:0;
+}
+
+/************************ classes *******************/
+
+.ff-js{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:640px){
+    .container{
+        width: 600px;
+    }
+}
+@media (min-width:768px){
+    .container{
+        width: 700px;
+    }
+}
+@media (min-width:900px){
+    .container{
+        width: 800px;
+    }
+}
+@media (min-width:1024px){
+    .container{
+        width: 900px;
+    }
+}
+@media (min-width:1280px){
+    .container{
+        width: 1100px;
+    }
+}
+@media (min-width:1536px){
+    .container{
+        width: 1300px;
+    }
+}
+
+
+
+/****************** header ***********/
+
+@media (max-width:1023px){
+    .nav__list{
+        transition: transform .3s linear ;
+        transform: scale3d(1,0,1);
+        transform-origin: top center;
+    }
+    .nav-dropped{
+        transform: scale3d(1,1,1);
+    }
+}
+
+
+/****************** main start ***********/
+
+.main-start{
+    background-image: url('../public/images/cover-start-mob.webp');
+    background-size: cover;
+}
+
+@media (min-width:1024px){
+    .main-start{
+        background-image: url('../public/images/cover-start-pc.webp');
+    }
+}
+
+/***************** main about ***************/
+
+.main-about:before{
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    opacity: 1;
+    background : linear-gradient( to  top right  , #150c87a1 15px  , #262075a1 15px  , #1a1341a1 15px ,	rgba(47, 47, 190, 0.2) 15px );
+}
+
+@media (min-width:768px){
+    .main-about:before{
+        top: -150px;
+        height: 150px;
+    }
+}
+
+.main-about .swiper-pagination{
+    position: initial;
+    margin-top: 2rem;
+}
+
+.main-about .swiper-pagination span{
+    background: #7C78A9 !important;
+    width: 20px;
+    height: 20px;
+}
+
+.main-about .swiper-pagination span.active{
+    background: #E3E1F5;
+}
+
+@media (min-width:1024px){
+    .stamina-p{
+        word-spacing: .5rem;
+    }
+}
+
+.protein-bg:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    
+    background-image: linear-gradient( to right , #1a1363a1  , #221b7248  );
+    border-left: 70px solid rgba(5, 5, 141, 0.479);
+
+}
+
+
+/*********************** home our plan *********************/
+
+.paln__bg::before{
+    content: '';
+    position: absolute;
+    top: -80px;
+    bottom: -80px;
+    left:-110px;
+    width:150px;
+    transform: rotate(-155deg);
+    background: linear-gradient(#77749B ,#332F64,#1A1363);
+    z-index: 0;
+}
+
+.paln__bg::after{
+    content: '';
+    position: absolute;
+    top:200px;
+    bottom:-80px;
+    left:220px;
+    width:230px;
+    transform: rotate(175deg)skew(-35deg);
+    background:#B8B3EC;
+    z-index: 1;
+    display: none;
+}
+
+@media (min-width:1024px){
+    .paln__bg::before{
+        left: 150px;
+        width: 200px;
+    }
+    .paln__bg::after{
+        display: block;
+    }
+}
+
+/******************************** home visit register ******************/
+
+.visit-reg{
+    background-image: url('../public/images/visit-reg-mob.webp');
+    background-position: center center;
+    background-size: cover;
+}
+
+.home-visit{
+    background-color: rgb(62 62 62 / .5);
+}
+.home-register{
+    background-color: rgb(62 62 62 / .8);
+}
+
+.home-visit:before , .home-register::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    background: #3e3e3ebf;
+    z-index: -1;
+}
+
+
+
+.home-register:before{
+   background: transparent; 
+   opacity: .1;
+}
+
