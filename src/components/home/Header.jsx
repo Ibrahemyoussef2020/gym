@@ -1,16 +1,22 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom";
+
+import { ValidityContext } from "../../contextApi";
 
 
 const Header = () => {
     const [dropped,setDropped] = useState(false);
 
-    // id={crypto.randomUUID()}
+    const {validity , setValidity} = useContext(ValidityContext)
 
+
+    // id={crypto.randomUUID()}
+    console.log(validity);
     return (
         <header>
+            <div>{validity}</div>
             <div className="container !pl-[10px] flex justify-between items-center">
-                <Link to="/dashboard-layout">
+                <Link to={validity === 'admin' ? '/dashboard-layout' : '/home' }>
                     <picture>
                         <source media='(min-width:640px)' srcSet="images/header-stamina-pc.webp" />
                         <img src="images/header-stamina-mob.webp" alt="stamina logo" />

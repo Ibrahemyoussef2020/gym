@@ -4,13 +4,13 @@ import {DashboardHeader,DashboardAside} from '../layout'
 const DashboardLayout = () => {
 
   return (
-    <div>
-        <DashboardHeader />
-        <DashboardAside/>
-        <section>
-            <Outlet/>
-        </section>
-    </div>
+    <section className='px-10 py-5 flex max-w-[100vw] overflow-auto'>   
+          <DashboardAside/>
+          <div className='flex-1 p-5 min-w-[500px] lg:min-w-[700px] bg-costum-clr_dark_white'>
+            <DashboardHeader />
+            <Outlet/> 
+          </div>      
+    </section>
   )
 }
 
