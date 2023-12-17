@@ -21,10 +21,3 @@ export const removeData = async (seletedData,id)=> await api.delete(`${seletedDa
 .then(res => true) 
 
 
-export {
-    getData,
-    getSelectedData,
-    addData,
-    modifyData,
-    removeData
-}
