@@ -5,7 +5,7 @@ const HomeRegister = () => {
       <div className="container overflow-visible">
         <h2 className=" lg:pl-5 mb-6 text-white lg:mb-2 text-center text-[40px] font-bold">REGISTER</h2>
         <div className="flex justify-center">
-          <form action="#" className="min-w-[300px] max-w-[350px] lg:max-w-[2000px]">
+          <form onSubmit={e => e.preventDefault()} action="#" className="min-w-[300px] max-w-[350px] lg:min-w-[400px] lg:max-w-[2000px]">
             <div className="bg-white px-4 py-12 rounded-2xl">
               <label htmlFor="first-name" className="block mb-3">
                 <p className=" font-bold text-[20px] mb-3">First Name</p>
@@ -19,7 +19,7 @@ const HomeRegister = () => {
                 <p className=" font-bold text-[20px] mb-3">Email</p>
                 <input type="text" id="email" className=" w-full rounded-2xl bg-costum-clr_thin_gray text-[20px] min-h-[40px]" />
               </label>
-              <label htmlFor="phone" className="block mb-3">
+              <label htmlFor="phone" className="block">
                 <p className=" font-bold text-[20px] mb-3">Phone</p>
                 <input type="text" id="phone" className=" w-full rounded-2xl bg-costum-clr_thin_gray text-[20px] min-h-[40px]" />
               </label>

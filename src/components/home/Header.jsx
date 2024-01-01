@@ -9,14 +9,10 @@ const Header = () => {
 
     const {validity , setValidity} = useContext(ValidityContext)
 
-
-    // id={crypto.randomUUID()}
-    console.log(validity);
     return (
         <header>
-            <div>{validity}</div>
-            <div className="container !pl-[10px] flex justify-between items-center">
-                <Link to={validity === 'admin' ? '/dashboard-layout' : '/home' }>
+            <div className="container !pl-[10px] pt-3 pb-2 sm:pt-1 lg:pt-0 sm:pb-0 flex justify-between items-center">
+                <Link to={validity === 'admin' ? '/dashboard-layout' : '/sign-up' }>
                     <picture>
                         <source media='(min-width:640px)' srcSet="images/header-stamina-pc.webp" />
                         <img src="images/header-stamina-mob.webp" alt="stamina logo" />
@@ -24,9 +20,13 @@ const Header = () => {
                 </Link>            
 
                 <nav className={`nav flex-1 flex justify-end`}>        
-                    <ul className={`nav__list ${dropped ? 'nav-dropped':''} py-3 lg:py-0 absolute  z-50 top-[53px] sm:top-[70px] left-0 right-0 lg:relative lg:top-0  mb-9 font-bold justify-end flex flex-col lg:flex-row  gap-x-5 w-full text-center bg-costum-clr_dark_blue lg:bg-inherit text-white lg:text-costum-clr_medium_blue`}>
+                    <ul className={`nav__list ${dropped ? 'nav-dropped':''} py-3 lg:py-0 absolute  z-50 top-[70px] left-0 right-0 lg:relative lg:top-0  mb-9 lg:mb-0 font-bold justify-end flex flex-col lg:flex-row  gap-x-5 w-full text-center bg-costum-clr_dark_blue lg:bg-inherit text-white lg:text-costum-clr_medium_blue`}>
                         <li>
-                            <Link to="/dashboard-layout" className="p-4 lg:p-0 block hover:opacity-70 ">Dashboard</Link>
+                            {
+                                validity === 'admin' ? <Link to="/dashboard-layout" className="p-4 lg:p-0 block hover:opacity-70 ">Dashboard</Link>
+                                :
+                                <a href="#about" className="p-4 lg:p-0 block hover:opacity-70 ">About</a>
+                            }
                         </li>
                         <li>
                             <a href="#home-about" className="p-4 lg:p-0 block hover:opacity-70">Why Join Us ?</a>
@@ -41,7 +41,7 @@ const Header = () => {
                             <a href="#home-visit" className="p-4 lg:p-0 block hover:opacity-70">Visit our Gym</a>
                         </li>
                         <li className="text-costum-clr_medium_blue my-4 lg:my-0">
-                            <a href="#register" className=" bg-costum-clr_dark_yellow hover:bg-costum-clr_light_yellow px-3 py-2 rounded-2xl" href="#">Register</a>
+                            <Link to="/sign-up" className=" bg-costum-clr_dark_yellow hover:bg-costum-clr_light_yellow px-3 py-2 rounded-2xl">Register</Link>
                         </li>
                     </ul>
 
