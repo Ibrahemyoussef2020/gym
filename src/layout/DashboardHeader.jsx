@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const DashboardHeader = () => {
   return (
-    <header className="flex justify-between items-center">
+    <header className="flex justify-between items-center pr-9">
       <Link to='/home'>
         <img src="/images/header-stamina-pc.webp" alt="stamina logo" />
       </Link> 
