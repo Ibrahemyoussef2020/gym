@@ -3,7 +3,7 @@ import { Routes , Route } from "react-router"
 import {
     HomePage,
     DashboardLayout,
-    Dashboard,
+    MainDash,
     Admin_Profile,
     Registration,
     Plan,
@@ -18,18 +18,25 @@ import {
 import { BrowserRouter } from "react-router-dom"
 import { useState } from "react"
     
-import { ValidityContext } from "./contextApi"
+import { ValidityContext , RememberMeContext } from "./contextApi"
+import {
+    validityLocalStorage,
+    rememberMeLocalStorage
+} from './localStorage'
+
 
 const App = () => {
-    const [validity , setValidity] = useState('admin')
+    const [validity , setValidity] = useState(validityLocalStorage)
+    const [rememberMe,setRememberMe] = useState(rememberMeLocalStorage) 
 
   return (
     
         <BrowserRouter>
-            <ValidityContext.Provider value={{validity,setValidity}}> 
+            <ValidityContext.Provider value={{validity,setValidity}}>
+            <RememberMeContext.Provider value={{rememberMe,setRememberMe}}>
                 <Routes>           
                     <Route path="/dashboard-layout" element={<DashboardLayout />}>
-                        <Route path='dashboard' element={<Dashboard />}/>
+                        <Route  path='' element={<MainDash />}/>
                         <Route path='admin-profile' element={<Admin_Profile />}/>
                         <Route path="registration" element={<Registration/>}/>           
                         <Route path='plan' element={<Plan />}/>
@@ -40,10 +47,11 @@ const App = () => {
                         <Route path='report' element={<Report />}/>       
                     </Route>
 
-                    <Route path='sign-in' element={<SignIn />}/>
-                    <Route path='/' element={<SignUp />}/>
+                    <Route path='/' element={<SignIn />}/>
+                    <Route path='sign-up' element={<SignUp />}/>
                     <Route path='home' element={<HomePage />}/>       
                 </Routes>
+            </RememberMeContext.Provider>
             </ValidityContext.Provider>  
         </BrowserRouter>
   )
