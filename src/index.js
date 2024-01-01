@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBrowserRouter , RouterProvider} from "react-router-dom"
 import ReactDOM from 'react-dom/client';
-
+import {QueryClient , QueryClientProvider } from 'react-query'
 import reportWebVitals from './reportWebVitals';
 import './index.css'
 
@@ -59,11 +59,15 @@ const router = createBrowserRouter([
 ])
 */
 
+const queryClient = new QueryClient()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-   <App/>
-  </React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <React.StrictMode>
+    <App/>
+    </React.StrictMode>
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
