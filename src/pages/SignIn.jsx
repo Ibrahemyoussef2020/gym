@@ -30,7 +30,6 @@ const SignIn = () => {
   const [isRememberMeChecked,setIsRememberMeChecked] = useState(false)
   const [isRememberMeImagesValid,setIsRememberMeImagesValid] = useState(false)
   const [didForgetPassword, setDidForgetPassword] = useState(false)
-  const [dididWontLoginAsAdminPopupVisible,setDidWontLoginAsAdminPopupVisible] = useState(false)
 
   const [user,setUser] = useState({
     email:'www.Main_Admin@Ibrahim.com',
@@ -329,7 +328,7 @@ const SignIn = () => {
       <div className={`absolute z-[500] top-0 left-0 bottom-0 right-0 ${didForgetPassword ? 'block' : 'hidden'} bg-white`}>
        
        <div className="flex justify-between items-center pr-5 sm:pr-7 mt-4">
-        <button className=" text-xl my-3 pl-5" onClick={_=>setDidWontLoginAsAdminPopupVisible(true)}>
+        <button className=" text-xl my-3 pl-5" onClick={_=>setLoginAsAdminAgreement(true)}>
           Login By admin Email <i className="fa-solid fa-arrow-right-long"></i>
         </button>
         <button className="text-2xl" onClick={_=>setDidForgetPassword(false)}>
