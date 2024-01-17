@@ -94,7 +94,7 @@ const Report = () => {
   }
 
   return (
-    <section className="realative lg:max-w-[650px] overflow-hidden p-1">
+    <section className="realative max-w-[620px] overflow-hidden pt-[40px]">
 
     <h1 className=" text-[32px] font-bold  text-costum-clr_dark_blue mt-[15px] mb-[10px]">Sales Report</h1>
 
@@ -150,13 +150,13 @@ const Report = () => {
           <li className="w-[160px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span className=" text-[14px] font-bold">Member ID</span>
           </li>
-          <li className="w-[130px] pl-3 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[130px] pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Plan</span>
           </li>
-          <li className="w-[130px] pl-5 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[130px] pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Month</span>
           </li>
-          <li className="w-[150px] pl-4 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[150px] pl-6 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Date Paid</span>
           </li>
           <li className="ml-4">

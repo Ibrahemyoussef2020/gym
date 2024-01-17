@@ -190,7 +190,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
 //----------------  end search and select number method -----------//
 
   return (
-    <section className="realative">
+    <section className="realative  mt-[45px]">
       <h1 className=" text-[32px] font-bold  text-costum-clr_dark_blue mt-[5px] mb-[10px]">Active Coaches</h1>
 
       <button onClick={showAdditionForm} className=" font-bold text-costum-clr_dark_blue text-[20px] py-[1px] px-6 rounded-2xl bg-white mb-4 altr-shadow">
@@ -222,7 +222,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
       </form>
 
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] min-w-[597px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] max-w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym coach</h2>
           <div className="flex justify-between mb-4">

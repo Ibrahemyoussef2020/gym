@@ -305,12 +305,12 @@ const toggleMode = e =>{
 
 
   return (
-    <div className="mt-8">
+    <div className="pt-[50px]">
       <h1 className=" text-[32px] font-bold text-costum-clr_dark_blue">Admin Information</h1>
 
       <div className="flex gap-2">
         <div>
-          <article className="card relative pt-[38px] pb-[52px] px-[24px] mb-[24px] w-[260px] bg-white rounded-xl main-shadow">
+          <article className="card relative pt-[38px] pb-[65px] px-[24px] mb-[24px] w-[260px] bg-white rounded-xl main-shadow">
             <img src="/images/ibrahim.webp" alt="Ibrahim" className="w-[69px] h-[69px] rounded-full mx-auto mb-4" />
             <div className=" absolute top-[60px] right-[45px] z-10">
               {adminQueryData?.length > 1 ? 
@@ -341,7 +341,7 @@ const toggleMode = e =>{
                 adminQueryData?.filter((adminInfo , index) => index === 0 )
                 .map(adminInfo =>{
                  return <React.Fragment key={adminInfo.id}>
-                    <li className="flex justify-between mb-2">
+                    <li className="flex justify-between mb-3">
                       <span>Username</span>
                       <span>{adminInfo?.name}</span>
                     </li>
@@ -360,7 +360,7 @@ const toggleMode = e =>{
           </article>
           <button
             onClick={moveToAddMode}
-            className=" text-white text-[14px] mx-auto block  font-bold bg-costum-clr_dark_blue px-4 rounded-lg main-shadow"
+            className=" text-white text-[14px] mx-auto block  font-bold bg-costum-clr_dark_blue px-4 rounded-xl main-shadow"
           >
             Register New Admin Account
           </button>
@@ -375,7 +375,7 @@ const toggleMode = e =>{
           </div>
         </div>
         <div>
-          <form onSubmit={handleContactFormSubmit} action="#" className="p-[25px] mb-4 w-[346px] bg-white rounded-xl main-shadow">
+          <form onSubmit={handleContactFormSubmit} action="#" className="p-[25px] mb-4 w-[356px] bg-white rounded-xl main-shadow">
               <label htmlFor="admin-name" className="mb-1 block">
                 <span className=" font-bold inline-block mb-1">Username</span>
                 <input readOnly={doesMainDataCopmleteInAddMode} value={admin.name} onChange={handleChangeContactValues} type="text" name="name" className={`p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black read-only:text-[#777] font-medium w-full`}/>
@@ -404,19 +404,19 @@ const toggleMode = e =>{
               </div>   
           </form>
           <p className={`text-error mb-2 text-red-500 text-sm mt-2 bg-white ${textContactError !== '' ? 'p-2' : ''}`}>{textContactError}</p>
-          <form action="#" onSubmit={handlePasswordFormSubmit} className="px-[25px] py-[17px] w-[346px] bg-white rounded-xl main-shadow">
+          <form action="#" onSubmit={handlePasswordFormSubmit} className="px-[25px] py-[17px] w-[356px] bg-white rounded-xl main-shadow">
               <label className=" text-center text-costum-clr_dark_blue font-bold block w-full mb-2">Password</label>
               {mode === 'edite' ? <label htmlFor="admin-name" className="mb-2 block">
                 <span className=" font-bold inline-block mb-1">{mode === 'add' ? 'Current' : 'Old'} Password</span>
-                <input value={adminPasswordData.oldPassword} onChange={handleChangePasswordValues}  type="text" name="oldPassword" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
+                <input value={adminPasswordData.oldPassword} onChange={handleChangePasswordValues}  type="password" name="oldPassword" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
               </label> : null}
               <label htmlFor="admin-name" className="mb-2 block">
                 <span className=" font-bold inline-block mb-1">New Password</span>
-                <input value={adminPasswordData.password} onChange={handleChangePasswordValues}  type="text" name="password" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
+                <input value={adminPasswordData.password} onChange={handleChangePasswordValues}  type="password" name="password" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
               </label> 
               <label htmlFor="admin-name" className="mb-2 block">
                 <span className=" font-bold inline-block mb-1">Re-type Password</span>
-                <input value={adminPasswordData.reTyepPassword} onChange={handleChangePasswordValues}  type="text" name="reTyepPassword" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
+                <input value={adminPasswordData.reTyepPassword} onChange={handleChangePasswordValues}  type="password" name="reTyepPassword" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
               </label>
               <div className="mt-[15px] text-end">
                 <button

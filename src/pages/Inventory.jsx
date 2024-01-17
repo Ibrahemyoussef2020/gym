@@ -205,12 +205,12 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
 //----------------  end search and select number method -----------//
 
   return (
-    <section className="relative pl-4">
-      <button onClick={showAdditionForm} className=" font-bold text-costum-clr_dark_blue text-[20px] py-[1px] px-5 rounded-3xl bg-white mb-6 mt-5 altr-shadow">
+    <section className="relative pl-4 pt-[20px]">
+      <button onClick={showAdditionForm} className=" font-bold text-costum-clr_dark_blue text-[20px] py-[1px] px-5 rounded-3xl bg-white mb-[31px] mt-5 altr-shadow">
         Add equipment
       </button>
 
-    <form onSubmit={handleSubmit} action="#" className={`w-[623px] min-h-[354px] flex flex-wrap items-start gap-x-4  popup pt-[21px] pb-[30px] px-[34px] absolute top-[175px] -left-2 z-50 bg-white rounded-2xl ${ isPopupFormOpen ?  'block' : 'hidden'} main-shadow`}>
+    <form onSubmit={handleSubmit} action="#" className={`w-[620px] min-h-[354px] flex flex-wrap items-start gap-x-4  popup pt-[21px] pb-[30px] px-[34px] absolute top-[200px] -left-2 z-50 bg-white rounded-2xl ${ isPopupFormOpen ?  'block' : 'hidden'} main-shadow`}>
         <div className="w-full flex justify-between">
             <article>
               <h3 className="font-bold text-costum-clr_dark_blue text-[20px] bg-white mb-1">
@@ -247,7 +247,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
       </form>
 
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] w-[597px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym equipment</h2>
           <div className="flex justify-between mb-4">

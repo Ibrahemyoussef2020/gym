@@ -58,7 +58,7 @@ const Registration = () => {
   }
 
   return (
-    <section className="mt-[50px]">
+    <section className="pt-[70px]">
       <p className=" text-[32px] font-bold mb-1 p-0 text-[#DEBA3B]">Become a Member!</p>
       <h1 className="text-[40px] leading-4 font-semibold mt-0 mb-6 p-0 text-[#1A1363]">Register</h1>
       <form onSubmit={handleSubmit} action="#" className="w-[623px] h-[354px] flex flex-wrap items-start gap-x-4 gap-y-4  px-[25px] pt-[40px] pb-[16px] bg-white rounded-xl main-shadow">
@@ -90,7 +90,7 @@ const Registration = () => {
         </div>
         <div className="flex gap-x-3 w-full justify-end">
           <button type="submit" name="submit" className="font-bold py-1 px-4 rounded-xl text-white bg-costum-clr_dark_blue">Avail Membership</button>
-          <button name="clear" className="font-bold py-1 px-4 rounded-xl text-costum-clr_dark_blue border border-solid border-costum-clr_dark_blue">Cancel</button>
+          <button name="clear" className="font-bold py-[2px] px-4 rounded-xl text-costum-clr_dark_blue border-2 border-solid border-costum-clr_dark_blue">Cancel</button>
         </div>
       </form>
       <p className={`text-error text-red-500 text-sm mt-2 bg-white ${textError !== '' ? 'p-2' : ''}`}>{textError}</p>

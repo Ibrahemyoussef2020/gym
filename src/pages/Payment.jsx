@@ -75,7 +75,7 @@ const Payment = () => {
   }
 
   return (
-    <section className="mt-9">
+    <section className="pt-[65px]">
       <p className=" text-[32px] font-bold mb-1 p-0 text-[#DEBA3B]">Point of Sale</p>
       <h1 className="text-[40px] leading-4 font-semibold mt-0 mb-7 p-0 text-[#1A1363]">Add Payment</h1>
       <form onSubmit={handleSubmit} action="#" className="w-[623px] min-h-[255px] flex flex-wrap items-start gap-x-4 gap-y-4  px-[25px] py-[17px] bg-white rounded-xl main-shadow">

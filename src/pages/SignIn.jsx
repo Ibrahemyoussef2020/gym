@@ -299,7 +299,7 @@ const SignIn = () => {
   }
 
   return (
-    <section className="flex justify-between items-center relative gap-2 bg-costum-clr_dark_white">
+    <section className="flex justify-center items-center relative xl:gap-x-[150px] bg-costum-clr_dark_white">
 
     <div className={`absolute top-0 left-0 right-0  bottom-0 z-50 bg-white flex-col gap-5 justify-center items-center ${isRememberMeImagesValid ? 'flex' : 'hidden'}`}>
       <Link to='/home'>
@@ -362,15 +362,15 @@ const SignIn = () => {
       </div>
 
       <div className="w-full sm:w-[450px] pt-4  mx-auto lg:mx-0">
-        <h1 className="pl-3 font-bold text-[36px] text-costum-clr_dark_blue">Sign-In</h1>
-        <form onSubmit={handleSubmit} action="#" className="p-[25px] pt-5 mb-2 w-full">   
-          <label htmlFor="email" className="mb-[12px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Email*</span>
-            <input  value={user.email} onChange={handleChangeValues}  type="email" name="email" id="email" className="p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] font-medium w-full"/>
+        <h1 className="pl-3 font-bold text-[36px] text-costum-clr_dark_blue">Sign-in</h1>
+        <form onSubmit={handleSubmit} action="#" className="p-[25px] pt-[55px] mb-2 w-full">   
+          <label htmlFor="email" className="mb-[16px] block">
+            <span className=" font-bold text-[24px] text-costum-clr_medium_blue inline-block mb-1">Email*</span>
+            <input  value={user.email} onChange={handleChangeValues}  type="email" name="email" id="email" className="text-xl font-bold p-2 min-h-[69px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] w-full"/>
           </label>
           <label htmlFor="name" className="mb-[12px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Password*</span>
-            <input value={user.password} onChange={handleChangeValues}  type="text" name="password" id="password"  className="p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black font-medium w-full"/>
+            <span className="font-bold text-[24px] text-costum-clr_medium_blue inline-block mb-1">Password*</span>
+            <input value={user.password} onChange={handleChangeValues}  type="password" name="password" id="password"  className=" text-xl font-bold p-2 min-h-[69px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] w-full"/>
           </label>
           <div className="flex justify-between mt-[40px] mb-[20px]">
             <label htmlFor="remember-me" className="update-admin flex gap-[10px] items-center relative -mt-2 cursor-pointer bg-costum-clr_dark_white">

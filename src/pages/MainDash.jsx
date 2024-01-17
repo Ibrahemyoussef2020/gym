@@ -63,8 +63,8 @@ const MainDash = () => {
 
 
   return (
-    <section className="flex gap-[13px]">
-      <div className="w-[469px]">
+    <section className="flex gap-[13px] pt-[30px]">
+      <div className="w-[429px]">
         <article className="flex justify-between pl-[28px] pr-[49px] pt-[23px] pb-[25px] bg-white rounded-2xl main-shadow">
           <div>
             <h2 className="text-[15px] mb-2 text-[#2B2B2B]">Welcome Banner, <span className=" font-bold text-costum-clr_dark_blue">Martell</span></h2>
@@ -157,9 +157,9 @@ const MainDash = () => {
             </div>
         </div>
       </div>
-      <div className="w-[248px]">
-        <article className="bg-white p-4 mb-[9px] rounded-2xl w-[187px] min-h-[178px] overflow-hidden main-shadow">
-          <Calendar onChange={handleCalender} value={date} className='w-[400px]' />
+      <div className="max-w-[187px]">
+        <article className="bg-white p-4 mb-[9px] rounded-2xl w-full min-h-[178px] overflow-hidden main-shadow">
+          <Calendar onChange={handleCalender} value={date} className=' w-[400px]' />
         </article> 
 
         <h3 className=" text-[#2B2B2B] mb-[9px] text-[15px] pl-2 font-bold">Inventory</h3>

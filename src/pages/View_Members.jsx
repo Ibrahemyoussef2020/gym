@@ -132,10 +132,10 @@ const View_Members = () => {
 
 
   return (
-    <section className="realative">
+    <section className="realative mt-[45px]">
       
     <h1 className=" text-[32px] font-bold  text-costum-clr_dark_blue mt-[5px] mb-[10px]">Active Members</h1>
-    <form onSubmit={handleSubmitModifications} action="#" className={`w-[623px] min-h-[354px] flex flex-wrap items-start gap-x-4 gap-y-4  popup  pt-[30px] pb-[40px] px-[34px] absolute z-50 bg-white rounded-2xl ${ doesModifiedFormOpen ?  'block' : 'hidden'} main-shadow`}>
+    <form onSubmit={handleSubmitModifications} action="#" className={`w-[623px]   min-h-[354px] flex flex-wrap items-start gap-x-4 gap-y-4  popup  pt-[30px] pb-[40px] px-[34px] absolute z-50 bg-white rounded-2xl ${ doesModifiedFormOpen ?  'block' : 'hidden'} main-shadow`}>
         <label htmlFor="name" className="flex-1 min-w-[45%]">
           <p className="font-bold pb-1">Name of Participant</p>
           <input value={register.name} onChange={handleChangeValues} id="name" name="name" type="text" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
@@ -170,7 +170,7 @@ const View_Members = () => {
       </form>
 
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] min-w-[597px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] max-w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym Members</h2>
           <div className="flex justify-between mb-4">
@@ -205,13 +205,13 @@ const View_Members = () => {
             </button>
             <span className="text-[14px] font-bold">Name</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span className=" text-[14px] font-bold">Member ID</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Date Enrolled</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Date Expiration</span>
           </li>
           <li className="ml-4">
@@ -237,10 +237,10 @@ const View_Members = () => {
                   page?.map(item => {
             
                     return <ul key={item.id} className="flex text-[12px] mb-[16px]">
-                      <li className=" w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item.id.slice(0,10)}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-enrolled']}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-expiration']}</li>
+                      <li className=" w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
+                      <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">{item.id.slice(0,10)}</li>
+                      <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-enrolled']}</li>
+                      <li className="w-[140px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-expiration']}</li>
                       <li>
                         <button onClick={_=>showModificationForm(item.id)} className="py-1 px-2 bg-white rounded-2xl text-center text-[10px] text-[#2B2B2B]">edite</button>
                       </li>

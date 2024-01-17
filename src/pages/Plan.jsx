@@ -170,7 +170,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
 //----------------  end search and select number method -----------//
 
   return (
-    <section className="realative lg:max-w-[650px] overflow-hidden p-1">
+    <section className="realative lg:max-w-[650px] overflow-hidden p-1 pt-[55px]">
       
       <button onClick={showAdditionForm} className=" font-bold text-costum-clr_dark_blue text-[20px] py-[1px] px-5 rounded-2xl bg-white mb-3 altr-shadow">
         Add Plan
@@ -185,7 +185,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
           <p className="font-bold pb-1">Validity</p>
           <input value={plan.validity} onChange={handleChangeValues} id="validity" name="validity" type="number" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
         </label>
-        <label htmlFor="price" className="flex-1 max-w-[50%]">
+        <label htmlFor="price" className="flex-1 max-w-[50%] mb-2">
           <p className="font-bold pb-1">Amount</p>
           <input value={plan.price} onChange={handleChangeValues} id="price" name="price"  type="number" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
         </label>

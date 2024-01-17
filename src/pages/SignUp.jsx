@@ -115,7 +115,7 @@ const SignUp = () => {
   }
 
   return ( 
-    <section className="flex bg-costum-clr_dark_white relative">
+    <section className="flex bg-costum-clr_dark_white relative justify-center xl:gap-x-[150px] items-center">
 
       <div className={` absolute p-[25px] mb-2 w-full sm:w-[346px] sm:left-[30%] top-5 bg-white rounded-xl main-shadow ${isValidityPopupVisible ? 'block' : 'hidden' } `}>
         <p className="mb-2 leading-[30px] font-semibold">Move To Admin Email To have A Control Over Dashboard</p>
@@ -131,22 +131,22 @@ const SignUp = () => {
       
       <div className="w-full sm:w-[450px] pt-4 mx-auto lg:mx-0">
         <h1 className="pl-3 font-bold text-[36px] text-costum-clr_dark_blue">Sign-up</h1>
-        <form onSubmit={handleSubmit} action="#" className="p-[25px] pt-3 mb-2 w-full">
+        <form onSubmit={handleSubmit} action="#" className="p-[25px] pt-[33px] mb-2 w-full">
           <label htmlFor="user-name" className="mb-[12px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Username*</span>
-            <input  value={user.name} onChange={handleChangeValues} type="text" name="name" className={`p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] font-medium w-full`}/>
+            <span className=" font-bold text-[24px] inline-block mb-1 text-costum-clr_dark_blue text-costum-clr_dark_blue">Username*</span>
+            <input  value={user.name} onChange={handleChangeValues} type="text" name="name" className={`p-2 min-h-[54px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] font-medium w-full`}/>
           </label>     
           <label htmlFor="user-name" className="mb-[12px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Email Address*</span>
-            <input  value={user.email} onChange={handleChangeValues}  type="email" name="email" className="p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] font-medium w-full"/>
+            <span className=" font-bold text-[24px] inline-block mb-1 text-costum-clr_dark_blue">Email Address*</span>
+            <input  value={user.email} onChange={handleChangeValues}  type="email" name="email" className="p-2 min-h-[54px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black read-only:text-[#777] font-medium w-full"/>
           </label>
           <label htmlFor="user-name" className="mb-[12px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Create Password*</span>
-            <input value={user.password} onChange={handleChangeValues}  type="text" name="password" className="p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black font-medium w-full"/>
+            <span className=" font-bold text-[24px] inline-block mb-1 text-costum-clr_dark_blue">Create Password*</span>
+            <input value={user.password} onChange={handleChangeValues}  type="password" name="password" className="p-2 min-h-[54px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black font-medium w-full"/>
           </label> 
           <label htmlFor="user-name" className="mb-[36px] block">
-            <span className=" font-bold text-[24px] inline-block mb-1">Re-type Password*</span>
-            <input value={user.reTyepPassword} onChange={handleChangeValues}  type="text" name="reTyepPassword" className="p-2 bg-white border-2 border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black font-medium w-full"/>
+            <span className=" font-bold text-[24px] inline-block mb-1 text-costum-clr_dark_blue">Re-type Password*</span>
+            <input value={user.reTyepPassword} onChange={handleChangeValues}  type="password" name="reTyepPassword" className="p-2 min-h-[54px] bg-white border-[3px] border-solid border-costum-clr_dark_blue outline-none rounded-lg  text-costum-clr_medium_black font-medium w-full"/>
           </label>
           <Link to='/' className=" text-costum-clr_dark_blue text-sm  block">- I have an Email</Link> 
           <p className={`text-error mb-2 text-red-500 text-sm mt-2  ${textError !== '' ? 'p-2' : ''}`}>{textError}</p>
