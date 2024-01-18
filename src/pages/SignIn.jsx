@@ -33,7 +33,7 @@ const SignIn = () => {
 
   const [user,setUser] = useState({
     email:'www.Main_Admin@Ibrahim.com',
-    password:'Admin-Ibrahim-Youssef-123457'
+    password:'Admin-Ibrahim-Youssef-123456'
   })
   const [userForgotData , setUserForgotData] = useState({
     contact:"01147359396",
