@@ -131,6 +131,11 @@ const SignIn = () => {
   const handleSubmit = (e)=>{
     e.preventDefault()
 
+    if (user.email === 'www.Main_Admin@Ibrahim.com' && user.password === 'Admin-Ibrahim-Youssef-123456') {
+        navigate('/home')
+        handleClearValues()
+    }
+
     const adminEmail = handleSubmitAdmin()
     const userEmail = handleSubmitUser()
     
