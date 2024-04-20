@@ -23,26 +23,38 @@ const Header = () => {
                     <ul className={`nav__list ${dropped ? 'nav-dropped':''} py-3 lg:py-0 absolute  z-50 top-[70px] left-0 right-0 lg:relative lg:top-0  mb-9 lg:mb-0 font-bold justify-end flex flex-col lg:flex-row  gap-x-5 w-full text-center bg-costum-clr_dark_blue lg:bg-inherit text-white lg:text-costum-clr_medium_blue`}>
                         <li>
                             {
-                                validity === 'admin' ? <Link to="/dashboard-layout" className="p-4 lg:p-0 block hover:opacity-70 ">Dashboard</Link>
+                                validity === 'admin' ? <Link to="/dashboard-layout/admin-profile" className="p-4 lg:p-0 block hover:opacity-70 ">Admin</Link>
                                 :
                                 <a href="#about" className="p-4 lg:p-0 block hover:opacity-70 ">About</a>
                             }
                         </li>
                         <li>
+                            {
+                            validity === 'admin' ? <Link to="/dashboard-layout/registration" className="p-4 lg:p-0 block hover:opacity-70 ">Registration</Link>
+                                :
                             <a href="#home-about" className="p-4 lg:p-0 block hover:opacity-70">Why Join Us ?</a>
+                            }
                         </li>
                         <li>
-                            <a href="#home-plan" className="p-4 lg:p-0 block hover:opacity-70">Plan</a>
+                            {
+                            validity === 'admin' ? <Link to="/dashboard-layout/plan" className="p-4 lg:p-0 block hover:opacity-70 ">Plan</Link>
+                                :
+                            <a href="#home-about" className="p-4 lg:p-0 block hover:opacity-70">Plan</a>
+                            }
                         </li>
-                        <li>
-                            <a href="#home-coatches" className="p-4 lg:p-0 block hover:opacity-70">Coatches</a>
-                        </li>
-                        <li>
-                            <a href="#home-visit" className="p-4 lg:p-0 block hover:opacity-70">Visit our Gym</a>
-                        </li>
-                        <li className="text-costum-clr_medium_blue my-4 lg:my-0">
-                            <Link to="/sign-up" className=" bg-costum-clr_dark_yellow hover:bg-costum-clr_light_yellow px-3 py-2 rounded-2xl">Register</Link>
-                        </li>
+                            {
+                            validity === 'admin' ? <Link to="/dashboard-layout/coaches" className="p-4 lg:p-0 block hover:opacity-70 ">Coatches</Link>
+                                :
+                            <a href="#home-about" className="p-4 lg:p-0 block hover:opacity-70">Coatches</a>
+                            }
+                            {
+                            validity === 'admin' ? <Link to="/dashboard-layout/payments" className="p-4 lg:p-0 block hover:opacity-70 ">Payments</Link>
+                                :
+                            <a href="#home-about" className="p-4 lg:p-0 block hover:opacity-70">Visit us</a>
+                            }
+                            <li className="text-costum-clr_medium_blue my-4 lg:my-0">
+                                <Link to="/sign-up" className=" bg-costum-clr_dark_yellow hover:bg-costum-clr_light_yellow px-3 py-2 rounded-2xl">Register</Link>
+                            </li>
                     </ul>
 
                     <button className="w-[35px] p-[2px] mb-4 sm:mb-8 inline-block lg:hidden" onClick={_=>setDropped(!dropped)}>
