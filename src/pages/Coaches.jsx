@@ -16,6 +16,7 @@ import {
   isAllDataExits,
   sortItems
 } from "../utilities"
+import { toast, Toaster } from "sonner";
 
 
 
@@ -42,6 +43,12 @@ const Coaches = () => {
     concat:'',
     'date-enrolled':'',
     'date-expiration':'',
+  })
+  const [controlledCoachInfo,setControlledCoachInfo] = useState({
+    name:'',
+    date:'',
+    email:'',
+    concat:'',
   })
 
 
@@ -70,7 +77,14 @@ const Coaches = () => {
     'date-enrolled':'',
     'date-expiration':'',
   }
+  const emptyControlledValues = {
+    name:'',
+    date:'',
+    email:'',
+    concat:'',
+  }
   setCoach(emptyValues)
+  setControlledCoachInfo(emptyControlledValues)
   setIsPopupFormOpen(false)
 }
 
@@ -81,7 +95,14 @@ const Coaches = () => {
       ...coach,
       [name]:value
     }
+
+    const newControlledObject  = {
+      ...controlledCoachInfo,
+      [name]:value
+    }
+
     setCoach(newObject)
+    setControlledCoachInfo(newControlledObject)
   }
 
   const handleSubmit = (e)=>{
@@ -121,14 +142,15 @@ const handleAddCoachQuery =  _=> {
 } 
 
 
-function handleSubmitAdditions(){
+function handleSubmitAdditions(){ 
 
-    if (!isAllDataExits(coach)) {
+    if (!isAllDataExits(controlledCoachInfo)) {
        setTextError('You must fill all inputs!')
        return false
     }
     handleAddCoachQuery()
     clearPopupForm()
+    toast.success('New coach has added')
     return true
 }
 
@@ -161,6 +183,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
   function handleSubmitModifications(){
     handleModifyCoachQuery()
     clearPopupForm()
+    toast.warning('Coach iformations have updated')
     return true
   }
 
@@ -305,6 +328,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
         }   
       </Swiper>
       </div>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }
