@@ -14,6 +14,7 @@ import {
   divideData,
   isAllDataExits
 } from "../utilities"
+import { toast, Toaster } from "sonner";
 
 
 
@@ -72,12 +73,13 @@ const Inventory = () => {
   const handleUploadImage = e =>{
 
     const src = URL.createObjectURL(e.target.files[0]);
+
     const imgName = e.target.files[0].name  
     imgRef.current.src = src;
-    
+
     const newObject = {
       ...equipment,
-      img:`/images/equipments/${imgName}`
+      img: `${src}` 
     }
     setEquipment(newObject)
     setTextError('')
@@ -156,6 +158,7 @@ function handleSubmitAdditions(){
     }
     handleAddequipmentQuery()
     clearPopupForm()
+    toast.success('New Equipment has added')
     return true
 }
 
@@ -188,6 +191,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
   function handleSubmitModifications(){
     handleModifyequipmentQuery()
     clearPopupForm()
+    toast.warning('Admin iformations have updated')
     return true
   }
 
@@ -323,6 +327,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
         }   
       </Swiper>
       </div>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }
