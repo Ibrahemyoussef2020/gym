@@ -103,7 +103,7 @@ const MainDash = () => {
               <button onClick={_=>toggleLinksVisibility('payments')}>
                 <i className="fa-solid fa-ellipsis-vertical"></i>
               </button>
-              <Link to='/dashboard-layout/payments' className={`absolute top-1 right-3 py-1 px-3 border border-solid border-[#eee] rounded-lg text-[10px] font-bold text-costum-clr_dark_blue ${visibleLinks.payments ? 'inline' : 'hidden'}`}>show all Coaches</Link>
+              <Link to='/dashboard-layout/payments' className={`absolute top-1 right-3 py-1 px-3 border border-solid border-[#eee] rounded-lg text-[10px] font-bold text-costum-clr_dark_blue ${visibleLinks.payments ? 'inline' : 'hidden'}`}>show all Payments</Link>
             </div>
 
             <div className=" w-[112px] h-[112px] relative flex justify-center items-center border-[20px] border-costum-clr_medium_blue rounded-full mx-auto">

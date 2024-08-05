@@ -7,6 +7,9 @@ import {
 } from "../utilities"
 import { useNavigate } from "react-router"
 
+import { toast, Toaster } from "sonner";
+
+
 const Payment = () => {
   const [textError , setTextError] = useState('')
 
@@ -61,6 +64,7 @@ const Payment = () => {
     }
     handleAddPaymentQuery()
     clearPaymentValues()
+    toast.success('New admin has added')
     navigate('/dashboard-layout/report')
     return true
   }
@@ -103,6 +107,7 @@ const Payment = () => {
         </div>
       </form>
       <p className={`text-error text-red-500 text-sm mt-2 bg-white ${textError !== '' ? 'p-2' : ''}`}>{textError}</p>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }
