@@ -4,7 +4,7 @@ import {DashboardHeader,DashboardAside} from '../layout'
 const DashboardLayout = () => {
 
   return (
-    <section className='px-10 py-5 flex max-w-[1024px] overflow-auto'>   
+    <section className='px-10 py-5 flex overflow-auto'>   
           <DashboardAside/>
           <div className='dashboard-layout flex-1 p-5 min-w-[700px] bg-costum-clr_dark_white'>
             <DashboardHeader />

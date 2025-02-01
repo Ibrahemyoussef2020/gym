@@ -18,10 +18,15 @@ body,*{
 
 /***************** costum pagination ***********/
 
+.swiper{
+    min-height: 300px !important;
+    font-weight: 700;
+}
+
 .swiper-button-prev,
 .swiper-button-next{
    top: auto !important;
-   bottom: 65px !important;
+   bottom: 10px !important;
    z-index: 100;
 }
 .swiper-button-next{

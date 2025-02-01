@@ -210,7 +210,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
         Add equipment
       </button>
 
-    <form onSubmit={handleSubmit} action="#" className={`w-[620px] min-h-[354px] flex flex-wrap items-start gap-x-4  popup pt-[21px] pb-[30px] px-[34px] absolute top-[200px] -left-2 z-50 bg-white rounded-2xl ${ isPopupFormOpen ?  'block' : 'hidden'} main-shadow`}>
+    <form onSubmit={handleSubmit} action="#" className={`min-w-[620px] min-h-[354px] flex flex-wrap items-start gap-x-4  popup pt-[21px] pb-[30px] px-[34px] absolute top-[200px] -left-2 z-50 bg-white rounded-2xl ${ isPopupFormOpen ?  'block' : 'hidden'} main-shadow`}>
         <div className="w-full flex justify-between">
             <article>
               <h3 className="font-bold text-costum-clr_dark_blue text-[20px] bg-white mb-1">
@@ -247,10 +247,10 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
       </form>
 
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl h-[500px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym equipment</h2>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-8">
             <form className="flex items-center gap-x-2">
               <span className=" text-[12px]">Show Entities</span>
               <select onChange={e=> {setSelectedNumber(e.target.value) ; cleanUpRef.current = false}} name="show-num-equipment" id="show-num-equipment" className="py-[1px] px-3 bg-[#5D57A3] rounded-2xl outline-none">
@@ -275,18 +275,18 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
             </form>
           </div>
        </div>
-       <ul className="flex justify-between mb-[18px]">
-          <li className="w-[200px] whitespace-nowrap overflow-hidden text-ellipsis">
+       <ul className="flex justify-center mb-[18px]">
+          <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Equipment Name</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Total No.</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Status</span>
           </li>
-          <li className="ml-4">
-            <span className="w-[100px] whitespace-nowrap overflow-hidden text-ellipsis text-[14px] font-bold">Actions</span>
+          <li>
+            <span className=" whitespace-nowrap overflow-hidden text-ellipsis text-[14px] font-bold">Actions</span>
           </li>
         </ul> 
        <Swiper
@@ -307,10 +307,10 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['equipments'])
                 {
                   page?.map(item => {
             
-                    return <ul key={item.id} className="flex text-[12px] mb-[16px]">
-                      <li className=" w-[200px] whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
-                      <li className="w-[130px] pl-4 whitespace-nowrap overflow-hidden text-ellipsis">{item.total}</li>
-                      <li className="w-[180px] whitespace-nowrap overflow-hidden text-ellipsis">{item.status}</li>
+                    return <ul key={item.id} className="flex text-[12px] mb-4 py-3">
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
+                      <li className="flex-1 pl-4 whitespace-nowrap overflow-hidden text-ellipsis">{item.total}</li>
+                      <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.status}</li>
                       <li>
                         <button onClick={_=>showModificationForm(item.id)} className="py-1 px-2 bg-white rounded-2xl text-center text-[10px] text-[#2B2B2B]">edite</button>
                       </li>

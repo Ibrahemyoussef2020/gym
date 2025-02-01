@@ -51,7 +51,7 @@ const MainDash = () => {
   }
 
   const handleCalender = (e)=>{
-    setDate(e.target.value)
+    setDate(e?.target?.value)
   }
 
   const handleSort = (e)=>{
@@ -64,8 +64,8 @@ const MainDash = () => {
 
   return (
     <section className="flex gap-[13px] pt-[30px]">
-      <div className="w-[429px]">
-        <article className="flex justify-between pl-[28px] pr-[49px] pt-[23px] pb-[25px] bg-white rounded-2xl main-shadow">
+      <div className="flex-1">
+        <article className="flex flex-1 justify-between pl-[28px] pr-[49px] pt-[23px] pb-[25px] bg-white rounded-2xl main-shadow">
           <div>
             <h2 className="text-[15px] mb-2 text-[#2B2B2B]">Welcome Banner, <span className=" font-bold text-costum-clr_dark_blue">Martell</span></h2>
             <p className="w-[234px] text-[10px] font-extralight">
@@ -157,16 +157,16 @@ const MainDash = () => {
             </div>
         </div>
       </div>
-      <div className="max-w-[187px]">
+      <div className="max-w-[300px]">
         <article className="bg-white p-4 mb-[9px] rounded-2xl w-full min-h-[178px] overflow-hidden main-shadow">
-          <Calendar onChange={handleCalender} value={date} className=' w-[400px]' />
+          <Calendar onChange={(e)=>handleCalender(e)} value={date} className='' />
         </article> 
 
-        <h3 className=" text-[#2B2B2B] mb-[9px] text-[15px] pl-2 font-bold">Inventory</h3>
-        <article className="bg-white flex flex-wrap p-4 mb-[12px] rounded-2xl w-[187px] h-[258px] main-shadow">    
+        <h3 className=" text-[#2B2B2B] py-3 text-lg pl-2 font-bold">Inventory</h3>
+        <article className="bg-white py-2 flex flex-wrap  justify-center gap-2 p-2 pb-4 mb-[12px] rounded-2xl h-[300px] main-shadow">    
             {
               equipmentQueryData?.filter((equipment,index)=> index < 4 )
-              .map((equipment,index)=> <article key={equipment.id} className="p-2 w-[50%] h-[50%] max-w-[100px] border border-solid border-[#eee]">
+              .map((equipment,index)=> <article key={equipment.id} className="p-2 mx-auto w-[50%] h-[50%] max-w-[100px] border border-solid border-[#eee]">
                 <img key={equipment.id} src={equipment.img} className="w-[100%] h-[100%]" />
               </article>)
             }

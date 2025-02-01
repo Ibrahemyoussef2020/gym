@@ -222,10 +222,10 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
       </form>
 
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] max-w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl h-[500px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym coach</h2>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-8">
             <form className="flex items-center gap-x-2">
               <span className=" text-[12px]">Show Entities</span>
               <select onChange={e=> {setSelectedNumber(e.target.value) ; cleanUpRef.current = false}} name="show-num-coach" id="show-num-coach" className="py-[1px] px-3 bg-[#5D57A3] rounded-2xl outline-none">
@@ -250,20 +250,20 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
             </form>
           </div>
        </div>
-       <ul className="flex justify-between mb-[18px]">
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+       <ul className="flex justify-between mb-[18px] py-3">
+          <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <button onClick={handleSort}>
               <i className="fa-solid fa-arrow-down-up-across-line text-[#ccc] mr-1"></i>
             </button>
             <span className="text-[14px] font-bold">Name</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className=" text-[14px] font-bold">Coach ID</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Contact</span>
           </li>
-          <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Date Expiration</span>
           </li>
           <li className="ml-4">
@@ -288,11 +288,11 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['coaches'])
                 {
                   page?.map(item => {
             
-                    return <ul key={item.id} className="flex text-[12px] mb-[16px]">
-                      <li className=" w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item.id.slice(0,10)}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-enrolled']}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item['date-expiration']}</li>
+                    return <ul key={item.id} className="flex text-[12px] mb-4 py-3">
+                      <li className="  flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.id.slice(0,10)}</li>
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item['date-enrolled']}</li>
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item['date-expiration']}</li>
                       <li>
                         <button onClick={_=>showModificationForm(item.id)} className="py-1 px-2 bg-white rounded-2xl text-center text-[10px] text-[#2B2B2B]">edite</button>
                       </li>

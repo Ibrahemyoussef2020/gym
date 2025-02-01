@@ -94,31 +94,31 @@ const Report = () => {
   }
 
   return (
-    <section className="realative max-w-[620px] overflow-hidden pt-[40px]">
+    <section className="realative  overflow-hidden pt-[40px]">
 
     <h1 className=" text-[32px] font-bold  text-costum-clr_dark_blue mt-[15px] mb-[10px]">Sales Report</h1>
 
-      <div className="mb-[42px] pt-[25px] pb-[49px] px-[30px] rounded-2xl max-h-[362px] min-w-[597px] bg-[#fff] relative z-0 text-[#2B2B2B] altr-shadow">
-        <form className="flex items-center gap-x-[18px]">
+      <div className="mb-[42px] pt-[25px] pb-[49px] px-[30px] rounded-2xl h-[110px]  min-w-[597px] bg-[#fff] relative z-0 text-[#2B2B2B] altr-shadow">
+        <form className="flex items-center gap-x-8">
           <label htmlFor="fromDate" className="flex-1 max-w-[173px]">
-            <p className="font-bold pb-1">From Date</p>
+            <p className="font-bold pb-3">From Date</p>
             <input onChange={handleAllDataFilters} id="fromDate" name="fromDate" type="date" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
           </label>
           <label htmlFor="toDate" className="flex-1 max-w-[173px]">
-            <p className="font-bold pb-1">To Date</p>
+            <p className="font-bold pb-3">To Date</p>
             <input onChange={handleAllDataFilters} id="toDate" name="toDate" type="date" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
           </label>
-          <div className="max-w-[173px]">
+          <div className="flex-1 text-end">
             <h2 className="font-bold pb-1 text-md">Total</h2>
             <p className="font-bold pb-1 min-h-[30px]">{amount}</p>
           </div>
         </form>
       </div>
 
-      <div className="py-[20px] px-[30px] rounded-2xl max-h-[362px] min-w-[611px] bg-[#fff] relative z-0 text-costum-clr_dark_blue altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl h-[500px]  min-w-[611px] bg-[#fff] relative z-0 text-costum-clr_dark_blue altr-shadow">
        <div>
           <h2 className=" text-[20px] font-bold mb-4">Gym payments</h2>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-8">
             <form className="flex items-center gap-x-2">
               <span className=" text-[12px]">Show Entities</span>
               <select onChange={handleAllDataFilters} name="show-num-payments" id="show-num-payments" className="py-[1px] px-3 bg-[#5D57A3] text-white rounded-2xl outline-none">
@@ -144,19 +144,19 @@ const Report = () => {
           </div>
        </div>
        <ul className="flex justify-between mb-[18px]">
-          <li className="w-[200px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Member Name</span>
           </li>
-          <li className="w-[160px] whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className=" text-[14px] font-bold">Member ID</span>
           </li>
-          <li className="w-[130px] pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 pl-[70px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Plan</span>
           </li>
-          <li className="w-[130px] pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 pl-2 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Month</span>
           </li>
-          <li className="w-[150px] pl-6 whitespace-nowrap overflow-hidden text-ellipsis">
+          <li className="flex-1 pl-7 whitespace-nowrap overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Date Paid</span>
           </li>
           <li className="ml-4">
@@ -182,12 +182,12 @@ const Report = () => {
                 {
                   page?.map(item => {
             
-                    return <ul key={item.id} className="flex text-[12px] mb-[16px]">
-                      <li className=" w-[200px] whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
-                      <li className="w-[160px] whitespace-nowrap overflow-hidden text-ellipsis">{item?.id?.slice(0,10)}</li>
-                      <li className=" w-[130px] whitespace-nowrap overflow-hidden text-ellipsis">{item.plan}-Mounths</li>
-                      <li className="w-[130px] whitespace-nowrap overflow-hidden text-ellipsis">{item.month}</li>
-                      <li className="w-[150px] whitespace-nowrap overflow-hidden text-ellipsis">{item.date}</li>
+                    return <ul key={item.id} className="flex text-[12px] mb-4 py-3">
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</li>
+                      <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item?.id?.slice(0,10)}</li>
+                      <li className=" flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.plan}-Mounths</li>
+                      <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.month}</li>
+                      <li className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">{item.date}</li>
                       <li>
                         {item.price}
                       </li>

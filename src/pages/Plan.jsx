@@ -34,7 +34,7 @@ const Plan = () => {
   const [plan,setPlan] = useState({
     name:'',
     validity:'',
-    price:'',
+    price:'100',
     created:''
   })
 
@@ -170,13 +170,13 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
 //----------------  end search and select number method -----------//
 
   return (
-    <section className="realative lg:max-w-[650px] overflow-hidden p-1 pt-[55px]">
+    <section className="realative overflow-hidden p-1 pt-[55px]">
       
       <button onClick={showAdditionForm} className=" font-bold text-costum-clr_dark_blue text-[20px] py-[1px] px-5 rounded-2xl bg-white mb-3 altr-shadow">
         Add Plan
       </button>
 
-    <form onSubmit={handleSubmit} action="#" className={`w-[615px] max-h-[288px] mb-[30px] gap-y-4 flex flex-wrap items-start gap-x-4 pt-[23px]  px-[27px] bg-costum-clr_medium_blue text-white rounded-2xl main-shadow`}>
+    <form onSubmit={handleSubmit} action="#" className={`min-w-[615px] max-h-[288px] mb-[30px] gap-y-4 flex flex-wrap items-start gap-x-4 pt-[23px]  px-[27px] bg-costum-clr_medium_blue text-white rounded-2xl main-shadow`}>
         <label htmlFor="name" className="flex-1 min-w-[45%]">
           <p className="font-bold pb-1">Plan Name</p>
           <input value={plan.name} onChange={handleChangeValues} id="name" name="name" type="text" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
@@ -187,7 +187,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
         </label>
         <label htmlFor="price" className="flex-1 max-w-[50%] mb-2">
           <p className="font-bold pb-1">Amount</p>
-          <input value={plan.price} onChange={handleChangeValues} id="price" name="price"  type="number" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
+          <input value={plan.price} onChange={handleChangeValues} id="price" name="price"  type="number" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-center text-costum-clr_medium_black font-medium w-full"/>
         </label>
         <div className="flex gap-x-3 w-full justify-end mt-2">
           <button type="submit" name="submit" className="font-bold py-1 px-4 rounded-xl bg-[#DEBA3B] text-costum-clr_dark_blue">Save</button>
@@ -197,9 +197,10 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
       </form>
 
 
-      <div className="py-[16px] px-[18px] rounded-2xl max-h-[362px] w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
+      <div className="py-[20px] px-[30px] rounded-2xl h-[500px]  min-w-[620px] bg-[#77749B] relative z-0 text-white altr-shadow">
        <div>
-          <div className="flex justify-between mb-4">
+        <h2 className=" text-[20px] font-bold mb-4">Subscibtion Plan</h2>
+          <div className="flex justify-between mb-8">
             <form className="flex items-center gap-x-2">
               <span className=" text-[12px]">Show Entities</span>
               <select onChange={e=> {setSelectedNumber(e.target.value) ; cleanUpRef.current = false}} name="show-num-plans" id="show-num-plans" className="py-[1px] px-3 bg-[#5D57A3] rounded-2xl outline-none">
@@ -225,13 +226,13 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
           </div>
        </div>
        <ul className="flex w-full justify-between mb-[18px]">
-          <li className="whitespace-nowrap w-[171px]  overflow-hidden text-ellipsis">
+          <li className="whitespace-nowrap flex-1  overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Plan Name</span>
           </li>
-          <li className="whitespace-nowrap  w-[171px] overflow-hidden text-ellipsis">
+          <li className="whitespace-nowrap  flex-1 overflow-hidden text-ellipsis">
             <span className=" text-[14px] font-bold">Validity</span>
           </li>
-          <li className="whitespace-nowrap w-[171px]  overflow-hidden text-ellipsis">
+          <li className="whitespace-nowrap flex-1  overflow-hidden text-ellipsis">
             <span className="text-[14px] font-bold">Amount</span>
           </li>
           <li className="whitespace-nowrap w-[46px]  overflow-hidden text-ellipsis pr-2">
@@ -256,10 +257,10 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
                 {
                   page?.map(item => {
             
-                    return <ul key={item.id} className="flex w-full justify-between text-[12px] mb-[16px]">
-                      <li className="whitespace-nowrap w-[171px] overflow-hidden text-ellipsis">{item.name || '...'}</li>
-                      <li className="whitespace-nowrap w-[171px] pl-6 overflow-hidden text-ellipsis">{item.validity || '...'}</li>
-                      <li className="whitespace-nowrap w-[171px] pl-6 overflow-hidden text-ellipsis">{item.price || '...'}</li>
+                    return <ul key={item.id} className="flex w-full justify-between text-[12px] mb-4 py-3">
+                      <li className="whitespace-nowrap flex-1 overflow-hidden text-ellipsis">{item.name || '...'}</li>
+                      <li className="whitespace-nowrap flex-1 pl-12 overflow-hidden text-ellipsis">{item.validity || '...'}</li>
+                      <li className="whitespace-nowrap flex-1 pl-6 overflow-hidden text-ellipsis">{item.price || '...'}</li>
                       <li className="w-[46px]">
                         <button onClick={_=>showModificationForm(item.id)} className="py-1 px-2 bg-white rounded-2xl text-center text-[10px] text-[#2B2B2B]">edite</button>
                       </li>

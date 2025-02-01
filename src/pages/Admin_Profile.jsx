@@ -310,7 +310,7 @@ const toggleMode = e =>{
 
       <div className="flex gap-2">
         <div>
-          <article className="card relative pt-[38px] pb-[65px] px-[24px] mb-[24px] w-[260px] bg-white rounded-xl main-shadow">
+          <article className="card relative pt-[38px] pb-[65px] px-[24px] mb-[24px] flex-1 max-w-[500px] bg-white rounded-xl main-shadow">
             <img src="/images/ibrahim.webp" alt="Ibrahim" className="w-[69px] h-[69px] rounded-full mx-auto mb-4" />
             <div className=" absolute top-[60px] right-[45px] z-10">
               {adminQueryData?.length > 1 ? 
@@ -374,8 +374,8 @@ const toggleMode = e =>{
             }
           </div>
         </div>
-        <div>
-          <form onSubmit={handleContactFormSubmit} action="#" className="p-[25px] mb-4 w-[356px] bg-white rounded-xl main-shadow">
+        <div className="flex-1">
+          <form onSubmit={handleContactFormSubmit} action="#" className="p-[25px] mb-4 min-w-[500px] flex-1 bg-white rounded-xl main-shadow">
               <label htmlFor="admin-name" className="mb-1 block">
                 <span className=" font-bold inline-block mb-1">Username</span>
                 <input readOnly={doesMainDataCopmleteInAddMode} value={admin.name} onChange={handleChangeContactValues} type="text" name="name" className={`p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black read-only:text-[#777] font-medium w-full`}/>
@@ -404,7 +404,7 @@ const toggleMode = e =>{
               </div>   
           </form>
           <p className={`text-error mb-2 text-red-500 text-sm mt-2 bg-white ${textContactError !== '' ? 'p-2' : ''}`}>{textContactError}</p>
-          <form action="#" onSubmit={handlePasswordFormSubmit} className="px-[25px] py-[17px] w-[356px] bg-white rounded-xl main-shadow">
+          <form action="#" onSubmit={handlePasswordFormSubmit} className="px-[25px] py-[17px] min-w-[500px] flex-1 bg-white rounded-xl main-shadow">
               <label className=" text-center text-costum-clr_dark_blue font-bold block w-full mb-2">Password</label>
               {mode === 'edite' ? <label htmlFor="admin-name" className="mb-2 block">
                 <span className=" font-bold inline-block mb-1">{mode === 'add' ? 'Current' : 'Old'} Password</span>

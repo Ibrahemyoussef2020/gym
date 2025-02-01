@@ -78,7 +78,7 @@ const Payment = () => {
     <section className="pt-[65px]">
       <p className=" text-[32px] font-bold mb-1 p-0 text-[#DEBA3B]">Point of Sale</p>
       <h1 className="text-[40px] leading-4 font-semibold mt-0 mb-7 p-0 text-[#1A1363]">Add Payment</h1>
-      <form onSubmit={handleSubmit} action="#" className="w-[623px] min-h-[255px] flex flex-wrap items-start gap-x-4 gap-y-4  px-[25px] py-[17px] bg-white rounded-xl main-shadow">
+      <form onSubmit={handleSubmit} action="#" className="min-w-[623px] max-h-[500px] flex flex-wrap items-start gap-x-4 gap-y-4  px-[25px] py-[17px] bg-white rounded-xl main-shadow">
         <label htmlFor="name" className="flex-1 min-w-[50%]">
           <p className="font-bold pb-1">Name of Member</p>
           <input onChange={e=> handleChangeValues(e)} id="name" name="name" type="text" className="p-2 bg-costum-clr_dark_white outline-none rounded-xl text-sm text-costum-clr_medium_black font-medium w-full"/>
