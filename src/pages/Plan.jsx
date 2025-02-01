@@ -16,7 +16,7 @@ import {
   isAllDataExits
 } from "../utilities"
 
-
+import { toast, Toaster } from "sonner";
 
 
 const Plan = () => {
@@ -122,6 +122,7 @@ function handleSubmitAdditions(){
     }
     handleAddPlansQuery()
     clearPopupForm()
+    toast.success('New Plan has added')
     return true
 }
 
@@ -153,6 +154,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
   function handleSubmitModifications(){
     handleModifyplansQuery()
     clearPopupForm()
+    toast.warning('Plan informations have updated')
     return true
   }
 
@@ -273,6 +275,7 @@ const {mutate: modifyMutate} = useCostumMutation(modifyData,['plans'])
         }   
       </Swiper>
       </div>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }

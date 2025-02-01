@@ -17,7 +17,7 @@ import {
 } from "../utilities"
 
 
-
+import { toast, Toaster } from "sonner";
 
 const View_Members = () => {
   let location = useLocation();
@@ -100,6 +100,7 @@ const View_Members = () => {
     e.preventDefault();
     handleModifyMemberQuery(id)
     clearModificationForm()
+    toast.success('Member informations have added')
     return true
   }
 
@@ -253,6 +254,7 @@ const View_Members = () => {
         }   
       </Swiper>
       </div>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }

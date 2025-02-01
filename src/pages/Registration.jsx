@@ -8,6 +8,8 @@ import {
 } from "../utilities"
 import { useNavigate } from "react-router"
 
+import { toast, Toaster } from "sonner";
+
 const Registration = () => {
   const [textError , setTextError] = useState('')
 
@@ -44,7 +46,8 @@ const Registration = () => {
        return false
     }
     handleAddMemerQuery()
-   navigate('/dashboard-layout/view-members')
+     toast.success('New Member has added')
+    navigate('/dashboard-layout/view-members')
     return true
   }
 
@@ -94,6 +97,7 @@ const Registration = () => {
         </div>
       </form>
       <p className={`text-error text-red-500 text-sm mt-2 bg-white ${textError !== '' ? 'p-2' : ''}`}>{textError}</p>
+      <Toaster position="top-center" richColors />
     </section>
   )
 }

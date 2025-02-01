@@ -21,7 +21,7 @@ import {
 } from "../utilities"
 
 
-
+import { toast, Toaster } from "sonner";
 
 const Admin_Profile = () => {
 
@@ -139,6 +139,7 @@ const handleModifyAdminQuery = e =>{
     }
 
      modifyMutate({seletedData:'admins',id,...modifiedAdmin})
+    
 }
 
 // ----------------- end handle edite mode -------------//
@@ -261,6 +262,7 @@ const handlePasswordFormSubmit = e =>{
 
       handleAddAdminQuery(e)
       handleClearConcatValues(e)
+      toast.success('New admin has added')
 
   }else if(mode === 'edite') {
 
@@ -285,6 +287,7 @@ const handlePasswordFormSubmit = e =>{
       }
 
       handleModifyAdminQuery(e)
+      toast.warning('Admin iformations have updated')
   }
 
   handleClearPasswordsValues(e)
@@ -436,6 +439,7 @@ const toggleMode = e =>{
           <p className={`text-error text-red-500 text-sm mt-2 bg-white ${textPasswordError !== '' ? 'p-2' : ''}`}>{textPasswordError}</p>
         </div>
       </div>
+      <Toaster position="top-center" richColors />
     </div>
   )
 }
